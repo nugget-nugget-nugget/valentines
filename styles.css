@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #f48fb1 100%);
+  overflow: hidden;
+}
+
+/* Floating Hearts */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  font-size: 24px;
+  color: rgba(244, 67, 54, 0.3);
+  animation: float 15s infinite ease-in-out;
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; font-size: 20px; }
+.heart:nth-child(2) { left: 20%; animation-delay: 2s; font-size: 28px; }
+.heart:nth-child(3) { left: 35%; animation-delay: 4s; font-size: 18px; }
+.heart:nth-child(4) { left: 50%; animation-delay: 1s; font-size: 32px; }
+.heart:nth-child(5) { left: 65%; animation-delay: 3s; font-size: 22px; }
+.heart:nth-child(6) { left: 75%; animation-delay: 5s; font-size: 26px; }
+.heart:nth-child(7) { left: 85%; animation-delay: 2.5s; font-size: 20px; }
+.heart:nth-child(8) { left: 95%; animation-delay: 4.5s; font-size: 24px; }
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Page Styles */
+.page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Main Page */
+.title {
+  font-size: 3rem;
+  color: #c2185b;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.yes-btn {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  padding: 1.25rem 2.5rem;
+}
+
+.yes-btn:hover {
+  background: linear-gradient(135deg, #43a047, #1b5e20);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.no-btn {
+  background: linear-gradient(135deg, #f44336, #c62828);
+  padding: 1.25rem 2.5rem;
+}
+
+.no-btn:hover {
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+}
+
+.tease-text {
+  padding-top: 100px;
+  font-size: 1.25rem;
+  color: #c2185b;
+  font-style: italic;
+  text-align: center;
+  min-height: 1.5rem;
+}
+
+/* Yipee Page */
+#yipee-page {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+}
+
+.yipee-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.bounce-heart {
+  font-size: 5rem;
+  color: #e91e63;
+  animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-20px) scale(1.1);
+  }
+}
+
+.yipee-title {
+  font-size: 5rem;
+  color: #2e7d32;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.yipee-message {
+  font-size: 1.75rem;
+  color: #1b5e20;
+  margin-bottom: 2rem;
+}
+
+.try-again-btn {
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+  padding: 1rem 2rem;
+}
+
+.try-again-btn:hover {
+  background: linear-gradient(135deg, #d81b60, #ad1457);
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+}
+
+/* Confetti */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: confetti-fall linear forwards;
+}
+
+.confetti.heart {
+  font-size: 16px;
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .buttons-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .yipee-title {
+    font-size: 3rem;
+  }
+  
+  .yipee-message {
+    font-size: 1.25rem;
+  }
+}
