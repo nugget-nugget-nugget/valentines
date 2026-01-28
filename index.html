@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Floating Hearts Background -->
+  <div class="hearts-container">
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+  </div>
+
+  <!-- Main Question Page -->
+  <div id="main-page" class="page">
+    <h1 class="title">Will you be my Valentine?</h1>
+    <div class="buttons-container">
+      <button id="yes-btn" class="btn yes-btn">Yes</button>
+      <button id="no-btn" class="btn no-btn">No</button>
+    </div>
+    <p id="tease-text" class="tease-text"></p>
+  </div>
+
+  <!-- Yipee Celebration Page -->
+  <div id="yipee-page" class="page hidden">
+    <div id="confetti-container"></div>
+    <div class="yipee-content">
+      <div class="bounce-heart">&#10084;</div>
+      <h1 class="yipee-title">사랑해 소명</h1>
+      <p class="yipee-message">당신은 나를 세상에서 가장 행복한 사람으로 만들어 줍니다.</p>
+      <p class="yipee-message">(I hope this is correct)</p>
+      <button id="try-again-btn" class="btn try-again-btn">Again!!</button>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
